@@ -19,9 +19,9 @@ const footerColumns = [
   {
     title: "Our Services",
     links: [
-      { label: "Finance Management", href: "/services" },
-      { label: "Tax Planning Solutions", href: "/services" },
-      { label: "Management Accounting", href: "/services" },
+      { label: "Finance Management", href: "/services/business-finance-management" },
+      { label: "Tax Planning Solutions", href: "/services/income-tax" },
+      { label: "Book Keeping & Accountancy", href: "/services/book-keeping-accountancy" },
     ],
   },
 ];
@@ -35,18 +35,18 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h4
+              <h3
                 className="text-white font-semibold text-sm mb-5"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 {col.title}
-              </h4>
+              </h3>
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-white/60 text-sm hover:text-white transition-colors duration-200"
+                      className="text-white/90 text-sm hover:text-white transition-colors duration-200"
                       style={{ fontFamily: "var(--font-dm)" }}
                     >
                       {link.label}
@@ -59,27 +59,27 @@ export default function Footer() {
 
           {/* Firm registration column */}
           <div>
-            <h4
+            <h3
               className="text-white font-semibold text-sm mb-5"
               style={{ fontFamily: "var(--font-jakarta)" }}
             >
               Firm Details
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li
-                className="text-white/60 text-sm"
+                className="text-white/90 text-sm"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Firm Reg. No.: 153921W
               </li>
               <li
-                className="text-white/60 text-sm"
+                className="text-white/90 text-sm"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Member — WIRC of ICAI
               </li>
               <li
-                className="text-white/60 text-sm"
+                className="text-white/90 text-sm"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Surat Branch
@@ -91,7 +91,7 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="border-t border-white/20 mt-10 pt-6">
           <p
-            className="text-white/40 text-xs leading-relaxed mb-4"
+            className="text-white/90 text-xs leading-relaxed mb-4"
             style={{ fontFamily: "var(--font-dm)" }}
           >
             Content on this site is for informational purposes only and does not constitute professional advice.
@@ -99,22 +99,22 @@ export default function Footer() {
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <p
-              className="text-white/40 text-xs"
+              className="text-white/90 text-xs"
               style={{ fontFamily: "var(--font-dm)" }}
             >
-              © 2025 S R S P &amp; Co. All rights reserved.
+              {`© ${new Date().getFullYear()} S R S P & Co. All rights reserved.`}
             </p>
             <div className="flex items-center gap-4">
               <Link
                 href="/privacy-policy"
-                className="text-white/40 text-xs hover:text-white/70 transition-colors duration-200"
+                className="text-white/90 text-xs hover:text-white transition-colors duration-200"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/disclaimer"
-                className="text-white/40 text-xs hover:text-white/70 transition-colors duration-200"
+                className="text-white/90 text-xs hover:text-white transition-colors duration-200"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Disclaimer

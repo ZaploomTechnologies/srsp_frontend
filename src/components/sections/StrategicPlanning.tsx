@@ -76,7 +76,7 @@ function PlanCard({
           />
         </div>
         <span
-          className="text-xs font-bold text-primary-light group-hover:text-primary transition-colors"
+          className="text-xs font-bold text-primary group-hover:text-primary transition-colors"
           style={{ fontFamily: "var(--font-jakarta)" }}
         >
           0{index + 1}

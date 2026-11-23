@@ -42,11 +42,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={`relative flex items-center gap-1 px-4 py-2 text-base font-medium rounded-lg transition-all duration-200 ${
                   isActive(link.href)
                     ? "text-primary bg-primary-light/30 font-semibold"
@@ -66,6 +67,9 @@ export default function Header() {
           <button
             className="md:hidden p-2 rounded-lg text-heading hover:bg-primary-light/20 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -74,7 +78,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2 shadow-lg">
+        <div id="mobile-menu" className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2 shadow-lg">
           {navLinks.map((link) => (
             <Link
               key={link.label}

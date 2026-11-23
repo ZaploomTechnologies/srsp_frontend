@@ -82,7 +82,6 @@ export default function Services() {
                   className="group flex flex-col bg-[#F1F4F1] rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-lg"
                 >
                   <div className="h-40 w-full overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={images[i]}
                       alt={feat.title}

@@ -178,6 +178,10 @@ export default function Consultation() {
                     <input
                       type="text"
                       placeholder="First Name *"
+                      aria-label="First name"
+                      aria-required="true"
+                      aria-invalid={!!errors.name}
+                      autoComplete="given-name"
                       value={form.name}
                       onChange={(e) => change("name", e.target.value)}
                       onBlur={() => blur("name")}
@@ -190,6 +194,10 @@ export default function Consultation() {
                     <input
                       type="tel"
                       placeholder="Phone *"
+                      aria-label="Phone number"
+                      aria-required="true"
+                      aria-invalid={!!errors.phone}
+                      autoComplete="tel"
                       value={form.phone}
                       onChange={(e) => change("phone", e.target.value)}
                       onBlur={() => blur("phone")}
@@ -205,6 +213,9 @@ export default function Consultation() {
                   <input
                     type="email"
                     placeholder="Email (optional)"
+                    aria-label="Email address"
+                    aria-invalid={!!errors.email}
+                    autoComplete="email"
                     value={form.email}
                     onChange={(e) => change("email", e.target.value)}
                     onBlur={() => blur("email")}
@@ -218,6 +229,7 @@ export default function Consultation() {
                 <textarea
                   rows={5}
                   placeholder="Write Message (optional)"
+                  aria-label="Message"
                   value={form.message}
                   onChange={(e) => change("message", e.target.value)}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-heading placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-light/40 bg-white transition-all duration-200 resize-y"

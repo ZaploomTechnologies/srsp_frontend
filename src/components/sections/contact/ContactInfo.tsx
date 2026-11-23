@@ -136,7 +136,7 @@ export default function ContactInfo() {
                   className="text-body text-sm"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
-                  +91 {CONTACT.phone}
+                  <a href={`tel:+91${CONTACT.phone.replace(/\D/g, "")}`} className="hover:text-primary">+91 {CONTACT.phone}</a>
                 </p>
               </div>
 
@@ -154,7 +154,7 @@ export default function ContactInfo() {
                   className="text-body text-sm"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
-                  {CONTACT.email}
+                  <a href={`mailto:${CONTACT.email}`} className="hover:text-primary">{CONTACT.email}</a>
                 </p>
               </div>
 
@@ -180,52 +180,6 @@ export default function ContactInfo() {
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <span
-                className="text-heading font-semibold text-sm"
-                style={{ fontFamily: "var(--font-jakarta)" }}
-              >
-                Follow Us:
-              </span>
-              <div className="w-8 h-px bg-gray-300" />
-              {[
-                {
-                  label: "Instagram",
-                  svg: (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <circle cx="12" cy="12" r="4" />
-                      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-                    </svg>
-                  ),
-                },
-                {
-                  label: "Facebook",
-                  svg: (
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                    </svg>
-                  ),
-                },
-                {
-                  label: "X",
-                  svg: (
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  ),
-                },
-              ].map(({ label, svg }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-body hover:text-primary hover:border-primary-light transition-all duration-200"
-                >
-                  {svg}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Right — send message card */}
@@ -237,7 +191,7 @@ export default function ContactInfo() {
               Send Message
             </h3>
             <p
-              className="text-white/60 text-sm mb-7 leading-relaxed"
+              className="text-white/80 text-sm mb-7 leading-relaxed"
               style={{ fontFamily: "var(--font-dm)" }}
             >
               Please fill out the form below with your details and message, and our
@@ -250,6 +204,10 @@ export default function ContactInfo() {
                   <input
                     type="text"
                     placeholder="First Name *"
+                    aria-label="First name"
+                    aria-required="true"
+                    aria-invalid={!!errors.firstName}
+                    autoComplete="given-name"
                     value={form.firstName}
                     onChange={(e) => change("firstName", e.target.value)}
                     onBlur={() => blur("firstName")}
@@ -262,6 +220,10 @@ export default function ContactInfo() {
                   <input
                     type="tel"
                     placeholder="Phone *"
+                    aria-label="Phone number"
+                    aria-required="true"
+                    aria-invalid={!!errors.phone}
+                    autoComplete="tel"
                     value={form.phone}
                     onChange={(e) => change("phone", e.target.value)}
                     onBlur={() => blur("phone")}
@@ -276,6 +238,9 @@ export default function ContactInfo() {
                 <input
                   type="email"
                   placeholder="Email (optional)"
+                  aria-label="Email address"
+                  aria-invalid={!!errors.email}
+                  autoComplete="email"
                   value={form.email}
                   onChange={(e) => change("email", e.target.value)}
                   onBlur={() => blur("email")}
@@ -287,6 +252,7 @@ export default function ContactInfo() {
 
               <textarea
                 placeholder="Write Message (optional)"
+                aria-label="Message"
                 value={form.message}
                 onChange={(e) => change("message", e.target.value)}
                 rows={5}
@@ -303,7 +269,7 @@ export default function ContactInfo() {
               </button>
 
               <p
-                className="text-white/50 text-xs leading-relaxed"
+                className="text-white/90 text-xs leading-relaxed"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Submitting this form does not create a client&ndash;professional

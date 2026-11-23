@@ -43,7 +43,7 @@ export default async function ServiceDetailPage({
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         {/* Banner */}
         <section className="relative flex h-72 md:h-96 flex-col items-center justify-center overflow-hidden bg-heading">
           <div

@@ -6,14 +6,14 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         {/* Banner */}
         <section className="relative h-72 md:h-96 flex flex-col justify-center items-center overflow-hidden bg-heading">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80')",
+                "url('/images/banner-office.webp')",
             }}
           />
           <div className="absolute inset-0 bg-heading/80" />
@@ -107,14 +107,13 @@ export default function NotFound() {
             className="text-2xl sm:text-3xl font-extrabold text-heading mb-4"
             style={{ fontFamily: "var(--font-jakarta)" }}
           >
-            Ooop! Error Page
+            Oops! Page not found
           </h2>
           <p
             className="text-body max-w-md leading-relaxed mb-8"
             style={{ fontFamily: "var(--font-dm)" }}
           >
-            Can&apos;t Find What You Looking For? Take A Moment And Do A Search
-            Below Or Start From Our{" "}
+            We couldn&apos;t find the page you were looking for. Try one of our main pages, or start from our{" "}
             <Link href="/" className="text-primary hover:underline font-medium">
               Home Page
             </Link>

@@ -13,7 +13,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/hero-banner-image.png')",
+          backgroundImage: "url('/images/hero-banner-image.webp')",
         }}
       />
       <div className="absolute inset-0 bg-linear-to-r from-heading/90 via-heading/85 to-heading/90" />

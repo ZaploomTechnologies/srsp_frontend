@@ -104,6 +104,7 @@ export default function Team() {
 
           <button
             onClick={prev}
+            aria-label="Previous team member"
             className="absolute -left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-primary border border-primary shadow-md flex items-center justify-center text-white hover:bg-[#174f41] transition-all duration-200 z-10"
           >
             <ChevronLeft size={18} />
@@ -111,6 +112,7 @@ export default function Team() {
 
           <button
             onClick={next}
+            aria-label="Next team member"
             className="absolute -right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-primary border border-primary shadow-md flex items-center justify-center text-white hover:bg-[#174f41] transition-all duration-200 z-10"
           >
             <ChevronRight size={18} />
@@ -118,15 +120,21 @@ export default function Team() {
         </div>
 
         {maxIndex > 0 && (
-          <div className="flex items-center justify-center gap-2 mt-8">
+          <div className="flex items-center justify-center mt-6">
             {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === current ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-primary-light"
-                }`}
-              />
+                aria-label={`Go to slide ${i + 1}`}
+                aria-current={i === current}
+                className="flex h-6 items-center justify-center px-2"
+              >
+                <span
+                  className={`block rounded-full transition-all duration-300 ${
+                    i === current ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-primary-light"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         )}

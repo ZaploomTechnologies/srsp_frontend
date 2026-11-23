@@ -7,13 +7,13 @@ const partners = [
     name: "CA. Savan M. Patel",
     qualifications: "B.Com, FCA, DISA, CFA (Level I)",
     designation: "Founding Partner",
-    image: "/founders/savan.jpeg",
+    image: "/founders/savan.webp",
   },
   {
     name: "CA. CS. Raj Shah",
     qualifications: "FCA, ACS, DISA",
     designation: "Co-Founding Partner",
-    image: "/founders/raj.jpeg",
+    image: "/founders/raj.webp",
   },
 ];
 

@@ -22,7 +22,7 @@ export default function CareerPage() {
 //   return (
 //     <>
 //       <Header />
-//       <main>
+//       <main id="main-content">
 //         <CareerBanner />
 //         <CareerOpenings />
 //         <CareerApply />

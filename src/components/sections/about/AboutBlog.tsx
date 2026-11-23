@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 import { blogPosts, type BlogPost } from "@/lib/blog";

@@ -8,7 +8,7 @@ export default function ContactBanner() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80')",
+            "url('/images/banner-contact.webp')",
         }}
       />
       <div className="absolute inset-0 bg-heading/80" />

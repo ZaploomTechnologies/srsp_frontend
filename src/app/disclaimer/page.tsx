@@ -11,7 +11,7 @@ export default function DisclaimerPage() {
   return (
     <>
       <Header />
-      <main className="bg-white py-16 lg:py-24">
+      <main id="main-content" className="bg-white py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1
             className="text-3xl sm:text-4xl font-extrabold text-heading mb-2"

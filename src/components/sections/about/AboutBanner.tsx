@@ -8,7 +8,7 @@ export default function AboutBanner() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80')",
+            "url('/images/banner-office.webp')",
         }}
       />
       <div className="absolute inset-0 bg-heading/80" />

@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <ContactBanner />
         <ContactInfo />
         <ContactMap />

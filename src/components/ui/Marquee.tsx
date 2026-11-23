@@ -11,7 +11,7 @@ const track = [...words, ...words];
 
 export default function Marquee({ bordered = false }: { bordered?: boolean }) {
   return (
-    <div className={`overflow-hidden py-6 bg-white select-none ${bordered ? "border-y border-gray-100" : "border-t border-gray-100"}`}>
+    <div aria-hidden="true" className={`overflow-hidden py-6 bg-white select-none ${bordered ? "border-y border-gray-100" : "border-t border-gray-100"}`}>
       <div className="animate-marquee flex gap-10 whitespace-nowrap will-change-transform">
         {track.map((w, i) => (
           <span

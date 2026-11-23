@@ -20,7 +20,7 @@ export default function BlogPage() {
 //   return (
 //     <>
 //       <Header />
-//       <main>
+//       <main id="main-content">
 //         <BlogBanner />
 //         <BlogList />
 //       </main>

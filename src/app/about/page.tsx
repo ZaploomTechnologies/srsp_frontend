@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <AboutBanner />
         <AboutStory bg="bg-white" />
         <About />

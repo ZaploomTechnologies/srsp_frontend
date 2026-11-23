@@ -15,7 +15,7 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <ServicesBanner />
         <ServicesDetail />
         <StrategicPlanning />

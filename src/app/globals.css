@@ -1,13 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-jakarta: var(--font-jakarta);
-  --font-dm: var(--font-dm);
-
   --color-primary: #1F6F5B;
   --color-primary-light: #C7F4AA;
   --color-heading: #0F3D3E;
-  --color-body: #6B7280;
+  --color-body: #4B5563;
 }
 
 html {
@@ -16,7 +13,7 @@ html {
 
 @layer base {
   body {
-    color: #6B7280;
+    color: #4B5563;
     background: #ffffff;
   }
 
@@ -100,4 +97,25 @@ html {
 }
 .marquee-outlined:hover::after {
   clip-path: inset(0 -0.3em 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-fade {
+    animation: none;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: #0F3D3E;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.skip-link:focus {
+  top: 1rem;
 }

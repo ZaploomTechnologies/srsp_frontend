@@ -37,7 +37,7 @@ export default function About() {
             </svg>
             <div className="rounded-3xl overflow-hidden w-full  aspect-280/374 lg:aspect-auto lg:h-full shadow-2xl">
               <img
-                src="/founders/savan.jpeg"
+                src="/founders/savan.webp"
                 alt="CA. Savan M. Patel"
                 className="w-full h-full object-cover object-top"
               />
@@ -110,7 +110,7 @@ export default function About() {
             </svg>
             <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:aspect-auto lg:h-full shadow-2xl">
               <img
-                src="/founders/raj.jpeg"
+                src="/founders/raj.webp"
                 alt="CA. CS. Raj Shah"
                 className="w-full h-full object-cover object-top"
               />

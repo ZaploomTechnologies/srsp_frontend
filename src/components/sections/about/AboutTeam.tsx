@@ -43,10 +43,6 @@ export default function AboutTeam() {
           {members.map((member, index) => {
             const isImageLeft = index % 2 === 0;
 
-            // desktop column assignments
-            const imageCol = isImageLeft ? "lg:col-start-1" : "lg:col-start-2";
-            const contentCol = isImageLeft ? "lg:col-start-2" : "lg:col-start-1";
-
             return (
               <div
                 key={member.name}

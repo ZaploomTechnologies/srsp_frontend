@@ -21,8 +21,10 @@ export default function ContactMap() {
         title="SRSP Office Location"
       />
       {!active && (
-        <div
+        <button
+          type="button"
           className="absolute inset-0 z-10 cursor-pointer"
+          aria-label="Click to interact with the map"
           onClick={() => setActive(true)}
         />
       )}

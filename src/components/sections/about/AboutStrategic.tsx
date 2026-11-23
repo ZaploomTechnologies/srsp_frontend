@@ -98,7 +98,7 @@ export default function AboutStrategic() {
                   6k+
                 </p>
                 <p
-                  className="text-white/75 text-sm leading-snug"
+                  className="text-white/90 text-sm leading-snug"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
                   Businesses Assisted with Financial Planning
@@ -107,14 +107,14 @@ export default function AboutStrategic() {
 
               {/* Scalable Solutions card */}
               <div className="bg-primary-light rounded-2xl p-5 flex flex-col gap-3 flex-1">
-                <h4
+                <h3
                   className="text-heading font-bold text-sm leading-snug"
                   style={{ fontFamily: "var(--font-jakarta)" }}
                 >
                   Scalable Solutions for Growing Businesses
-                </h4>
+                </h3>
                 <p
-                  className="text-heading/70 text-xs leading-relaxed"
+                  className="text-heading/85 text-xs leading-relaxed"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
                   Start with your goals in mind and then work backwards to
