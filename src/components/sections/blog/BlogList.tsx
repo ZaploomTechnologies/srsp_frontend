@@ -105,7 +105,7 @@ export default function BlogList() {
               <div className="space-y-4">
                 {recentPosts.map((post) => (
                   <div key={post.id} className="flex gap-3 group cursor-pointer">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={post.image}
                       alt={post.title}
                       className="w-16 h-16 object-cover rounded-lg shrink-0"
@@ -260,7 +260,7 @@ export default function BlogList() {
                   >
                     {/* Featured image */}
                     <div className="overflow-hidden rounded-xl mb-5">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={post.image}
                         alt={post.title}
                         className="w-full h-64 sm:h-72 object-cover hover:scale-105 transition-transform duration-500"

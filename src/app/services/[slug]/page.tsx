@@ -59,9 +59,12 @@ export default async function ServiceDetailPage({
       <main id="main-content">
         {/* Banner */}
         <section className="relative flex h-72 md:h-96 flex-col items-center justify-center overflow-hidden bg-heading">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('${image.replace("w=800&q=70", "w=1920&q=80")}')` }}
+          <img
+            src={image.replace("w=800&q=70", "w=1920&q=80")}
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-heading/80" />
           <div className="relative z-10 px-4 text-center">

@@ -10,7 +10,7 @@ function TeamCard({ name, role, cardQual, image, visibleCount }: TeamMember & { 
   return (
     <div className="relative rounded-2xl shrink-0" style={{ flex: `0 0 ${cardWidth}`, width: cardWidth }}>
       <div className="relative rounded-2xl overflow-hidden h-96 sm:h-105">
-        <img
+        <img loading="lazy" decoding="async"
           src={image}
           alt={name}
           className="w-full h-full object-cover object-top"

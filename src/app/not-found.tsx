@@ -15,12 +15,12 @@ export default function NotFound() {
       <main id="main-content">
         {/* Banner */}
         <section className="relative h-72 md:h-96 flex flex-col justify-center items-center overflow-hidden bg-heading">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                "url('/images/banner-office.webp')",
-            }}
+          <img
+            src="/images/banner-office.webp"
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-heading/80" />
           <div className="relative z-10 text-center px-4">

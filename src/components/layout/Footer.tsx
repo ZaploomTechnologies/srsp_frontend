@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT } from "@/lib/contact";
 
 const footerColumns = [
   {
@@ -70,7 +71,7 @@ export default function Footer() {
                 className="text-white/90 text-sm"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
-                Firm Reg. No.: 153921W
+                Firm Reg. No.: {CONTACT.firmRegNo}
               </li>
               <li
                 className="text-white/90 text-sm"

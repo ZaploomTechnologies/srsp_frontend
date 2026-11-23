@@ -29,7 +29,7 @@ export default function PartnersPreview() {
           backgroundImage: "radial-gradient(at bottom left, #c7f4aa 0%, #FAFAF8 30%)",
         }}
       >
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/logo-w.svg"
           alt=""
           aria-hidden
@@ -64,7 +64,7 @@ export default function PartnersPreview() {
           {partners.map((partner) => (
             <div key={partner.name} className="flex flex-col gap-4">
               <div className="rounded-2xl overflow-hidden aspect-[3/4] w-full shadow-lg">
-                <img
+                <img loading="lazy" decoding="async"
                   src={partner.image}
                   alt={partner.name}
                   className="w-full h-full object-cover object-top"

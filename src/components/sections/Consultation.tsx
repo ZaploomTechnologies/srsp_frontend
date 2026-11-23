@@ -1,11 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { CONTACT } from "@/lib/contact";
-
-const WA_NUMBER = `91${CONTACT.phone.replace(/\D/g, "")}`;
+import ContactForm from "@/components/forms/ContactForm";
 
 const contactItems = [
   { icon: MapPin, label: "Office Address", value: `${CONTACT.address.line1}\n${CONTACT.address.line2}` },
@@ -13,79 +9,7 @@ const contactItems = [
   { icon: Mail, label: "Email", value: CONTACT.email },
 ];
 
-type Form = { name: string; phone: string; email: string; message: string };
-type Errors = { name: string; phone: string; email: string };
-
-function validate(form: Form): Errors {
-  const errors: Errors = { name: "", phone: "", email: "" };
-  if (!form.name.trim()) {
-    errors.name = "Name is required.";
-  }
-  const digits = form.phone.replace(/\D/g, "");
-  if (!form.phone.trim()) {
-    errors.phone = "Phone number is required.";
-  } else if (!/^[6-9]\d{9}$/.test(digits)) {
-    errors.phone = "Enter a valid 10-digit mobile number.";
-  }
-  if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-    errors.email = "Enter a valid email address.";
-  }
-  return errors;
-}
-
-function FieldError({ msg }: { msg: string }) {
-  if (!msg) return null;
-  return (
-    <p className="text-red-500 text-xs mt-1 ml-1" style={{ fontFamily: "var(--font-dm)" }}>
-      {msg}
-    </p>
-  );
-}
-
 export default function Consultation() {
-  const [form, setForm] = useState<Form>({ name: "", phone: "", email: "", message: "" });
-  const [errors, setErrors] = useState<Errors>({ name: "", phone: "", email: "" });
-  const [touched, setTouched] = useState<Partial<Record<keyof Form, boolean>>>({});
-
-  const change = (field: keyof Form, value: string) => {
-    const updated = { ...form, [field]: value };
-    setForm(updated);
-    if (touched[field]) setErrors(validate(updated));
-  };
-
-  const blur = (field: keyof Form) => {
-    setTouched((p) => ({ ...p, [field]: true }));
-    setErrors(validate(form));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setTouched({ name: true, phone: true, email: true });
-    const errs = validate(form);
-    setErrors(errs);
-    if (errs.name || errs.phone || errs.email) return;
-
-    const lines = [
-      "*New Consultation Request — S R S P & Co.*",
-      `Name: ${form.name.trim()}`,
-      `Phone: ${form.phone.trim()}`,
-    ];
-    if (form.email.trim()) lines.push(`Email: ${form.email.trim()}`);
-    if (form.message.trim()) lines.push(`Message: ${form.message.trim()}`);
-
-    window.open(
-      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`,
-      "_blank"
-    );
-  };
-
-  const inputClass = (err: string) =>
-    `w-full px-4 py-3 rounded-xl border text-sm text-heading placeholder-gray-400 focus:outline-none focus:ring-2 bg-white transition-all duration-200 ${
-      err
-        ? "border-red-400 focus:border-red-400 focus:ring-red-100"
-        : "border-gray-200 focus:border-primary focus:ring-primary-light/40"
-    }`;
-
   return (
     <section id="contact" className="py-12 lg:py-24 bg-[#FAFAF8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,90 +95,7 @@ export default function Consultation() {
                 and our team will get back to you as soon as possible.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-                {/* Row 1: Name + Phone */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="First Name *"
-                      aria-label="First name"
-                      aria-required="true"
-                      aria-invalid={!!errors.name}
-                      autoComplete="given-name"
-                      value={form.name}
-                      onChange={(e) => change("name", e.target.value)}
-                      onBlur={() => blur("name")}
-                      className={inputClass(errors.name)}
-                      style={{ fontFamily: "var(--font-dm)" }}
-                    />
-                    <FieldError msg={errors.name} />
-                  </div>
-                  <div>
-                    <input
-                      type="tel"
-                      placeholder="Phone *"
-                      aria-label="Phone number"
-                      aria-required="true"
-                      aria-invalid={!!errors.phone}
-                      autoComplete="tel"
-                      value={form.phone}
-                      onChange={(e) => change("phone", e.target.value)}
-                      onBlur={() => blur("phone")}
-                      className={inputClass(errors.phone)}
-                      style={{ fontFamily: "var(--font-dm)" }}
-                    />
-                    <FieldError msg={errors.phone} />
-                  </div>
-                </div>
-
-                {/* Row 2: Email (optional) */}
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email (optional)"
-                    aria-label="Email address"
-                    aria-invalid={!!errors.email}
-                    autoComplete="email"
-                    value={form.email}
-                    onChange={(e) => change("email", e.target.value)}
-                    onBlur={() => blur("email")}
-                    className={inputClass(errors.email)}
-                    style={{ fontFamily: "var(--font-dm)" }}
-                  />
-                  <FieldError msg={errors.email} />
-                </div>
-
-                {/* Row 3: Message (optional) */}
-                <textarea
-                  rows={5}
-                  placeholder="Write Message (optional)"
-                  aria-label="Message"
-                  value={form.message}
-                  onChange={(e) => change("message", e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-heading placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-light/40 bg-white transition-all duration-200 resize-y"
-                  style={{ fontFamily: "var(--font-dm)" }}
-                />
-
-                <div>
-                  <button
-                    type="submit"
-                    className="bg-primary text-white font-semibold px-8 py-3 rounded-full hover:bg-[#174f41] transition-colors duration-200 text-sm shadow-md shadow-primary/20"
-                    style={{ fontFamily: "var(--font-jakarta)" }}
-                  >
-                    Send Message
-                  </button>
-                </div>
-
-                <p
-                  className="text-body text-xs leading-relaxed"
-                  style={{ fontFamily: "var(--font-dm)" }}
-                >
-                  Submitting this form does not create a client&ndash;professional
-                  relationship. Professional services commence only after a
-                  formal engagement letter is signed.
-                </p>
-              </form>
+              <ContactForm variant="light" />
             </div>
           </div>
         </div>

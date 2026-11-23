@@ -10,11 +10,12 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-heading"
     >
       {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/hero-banner-image.webp')",
-        }}
+      <img
+        src="/images/hero-banner-image.webp"
+        alt=""
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-linear-to-r from-heading/90 via-heading/85 to-heading/90" />
 

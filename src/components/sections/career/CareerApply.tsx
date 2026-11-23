@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { CONTACT } from "@/lib/contact";
+import { openWhatsApp } from "@/lib/contact";
 import { openings } from "@/lib/careers";
 
-const WA_NUMBER = `91${CONTACT.phone.replace(/\D/g, "")}`;
 
 type Form = { name: string; phone: string; email: string; position: string; message: string };
 type Errors = { name: string; phone: string; email: string };
@@ -84,10 +83,7 @@ export default function CareerApply() {
     if (form.email.trim()) lines.push(`Email: ${form.email.trim()}`);
     if (form.message.trim()) lines.push(`Message: ${form.message.trim()}`);
 
-    window.open(
-      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`,
-      "_blank"
-    );
+    openWhatsApp(lines);
     setSubmitted(true);
   };
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT } from "@/lib/contact";
+import { CONTACT, PHONE_E164 } from "@/lib/contact";
 import { services } from "@/lib/services";
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://srspco.com";
@@ -76,9 +76,9 @@ export function organizationJsonLd() {
         url: SITE_URL,
         logo: absoluteUrl("/og-image.jpg"),
         image: absoluteUrl("/og-image.jpg"),
-        telephone: `+91${CONTACT.phone.replace(/\D/g, "")}`,
+        telephone: PHONE_E164,
         email: CONTACT.email.toLowerCase(),
-        identifier: "ICAI Firm Registration No. 153921W",
+        identifier: `ICAI Firm Registration No. ${CONTACT.firmRegNo}`,
         address: {
           "@type": "PostalAddress",
           streetAddress: CONTACT.address.line1,

@@ -46,14 +46,14 @@ export default function AboutStory({ bg = "bg-[#FAFAF8]" }: { bg?: string }) {
         {/* Office photos */}
         <div className="grid grid-cols-2 gap-4">
           <div className="rounded-3xl overflow-hidden aspect-3/4 shadow-2xl">
-            <img
+            <img loading="lazy" decoding="async"
               src="/images/office-reception.webp"
               alt="SRSP & Co. Chartered Accountants office reception"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="rounded-3xl overflow-hidden aspect-3/4 shadow-2xl mt-10">
-            <img
+            <img loading="lazy" decoding="async"
               src="/images/office-team-member.webp"
               alt="SRSP & Co. team member at work"
               className="w-full h-full object-cover"

@@ -45,7 +45,7 @@ export default function Services() {
           backgroundImage: "radial-gradient(at bottom left, #c7f4aa 0%, #FFFFFF 30%)",
         }}
       >
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/logo-w.svg"
           alt=""
           aria-hidden

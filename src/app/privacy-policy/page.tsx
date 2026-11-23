@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { CONTACT, PHONE_DISPLAY } from "@/lib/contact";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
@@ -34,11 +35,11 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p>
                 S R S P &amp; Co. (Chartered Accountants) is a firm registered with the Institute of
-                Chartered Accountants of India (ICAI), operating from B-101, Bhatar Trade Center,
-                Near Bhatar Char Rasta, Bhatar, Surat – 395017, Gujarat, India.
+                Chartered Accountants of India (ICAI), operating from {CONTACT.address.line1},
+                {CONTACT.address.line2}, Gujarat, India.
               </p>
               <p className="mt-2">
-                Contact: <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a> | +91 63557 74778
+                Contact: <a href={`mailto:${CONTACT.email}`} className="inline-block py-0.5 text-primary hover:underline">{CONTACT.email}</a> | {PHONE_DISPLAY}
               </p>
             </section>
 
@@ -102,7 +103,7 @@ export default function PrivacyPolicyPage() {
               </ul>
               <p className="mt-2">
                 To exercise any of these rights, please contact us at{" "}
-                <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a>.
+                <a href={`mailto:${CONTACT.email}`} className="inline-block py-0.5 text-primary hover:underline">{CONTACT.email}</a>.
               </p>
             </section>
 
@@ -137,9 +138,9 @@ export default function PrivacyPolicyPage() {
               </p>
               <address className="not-italic mt-2">
                 <strong>S R S P &amp; Co.</strong><br />
-                B-101, Bhatar Trade Center, Near Bhatar Char Rasta<br />
-                Bhatar, Surat – 395017, Gujarat, India<br />
-                Email: <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a>
+                {CONTACT.address.line1}<br />
+                {CONTACT.address.line2}, Gujarat, India<br />
+                Email: <a href={`mailto:${CONTACT.email}`} className="inline-block py-0.5 text-primary hover:underline">{CONTACT.email}</a>
               </address>
             </section>
 

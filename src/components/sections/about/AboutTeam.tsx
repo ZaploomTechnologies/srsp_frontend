@@ -54,7 +54,7 @@ export default function AboutTeam() {
                     className={isImageLeft ? "-top-10 -left-10" : "-top-10 -right-10"}
                   />
                   <div className="rounded-3xl overflow-hidden shadow-2xl" style={{ aspectRatio: "3/4" }}>
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover object-top"

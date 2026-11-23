@@ -32,7 +32,7 @@ export default function AboutCompany() {
 
             {/* Main image */}
             <div className="rounded-3xl overflow-hidden h-[500px] shadow-2xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/office-reception.webp"
                 alt="SRSP & Co. Chartered Accountants office reception"
                 className="w-full h-full object-cover object-center"

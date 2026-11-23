@@ -4,12 +4,12 @@ import { ChevronRight } from "lucide-react";
 export default function BlogBanner() {
   return (
     <section className="relative h-72 md:h-96 flex flex-col justify-center items-center overflow-hidden bg-heading">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('/images/banner-team.webp')",
-        }}
+      <img
+        src="/images/banner-team.webp"
+        alt=""
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-heading/80" />
 

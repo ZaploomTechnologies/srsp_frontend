@@ -79,7 +79,7 @@ export default function AboutStrategic() {
 
             {/* Left inner: image with play button */}
             <div className="relative rounded-2xl overflow-hidden h-64 sm:h-105">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/office-interior.webp"
                 alt="SRSP & Co. modern glass-walled office"
                 className="w-full h-full object-cover object-top"

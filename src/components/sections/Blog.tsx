@@ -42,7 +42,7 @@ function BlogCard({ category, title, excerpt, date, readTime, image }: BlogPost)
   return (
     <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-primary-light hover:shadow-xl transition-all duration-300 cursor-pointer">
       <div className="relative h-52 overflow-hidden">
-        <img
+        <img loading="lazy" decoding="async"
           src={image}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

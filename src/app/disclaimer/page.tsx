@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = pageMetadata({
   title: "Disclaimer",
@@ -94,9 +95,9 @@ export default function DisclaimerPage() {
               </p>
               <address className="not-italic mt-2">
                 <strong>S R S P &amp; Co.</strong><br />
-                B-101, Bhatar Trade Center, Near Bhatar Char Rasta<br />
-                Bhatar, Surat – 395017, Gujarat, India<br />
-                Email: <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a>
+                {CONTACT.address.line1}<br />
+                {CONTACT.address.line2}, Gujarat, India<br />
+                Email: <a href={`mailto:${CONTACT.email}`} className="inline-block py-0.5 text-primary hover:underline">{CONTACT.email}</a>
               </address>
             </section>
 
