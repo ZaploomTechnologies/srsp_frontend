@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — S R S P & Co.",
-  description: "Privacy Policy for S R S P & Co. — Chartered Accountants, Surat.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy Policy",
+  description:
+    "Privacy Policy for S R S P & Co, Chartered Accountants, Surat — how we handle contact form data under the DPDPA 2023.",
+  path: "/privacy-policy/",
+});
 
 export default function PrivacyPolicyPage() {
   return (

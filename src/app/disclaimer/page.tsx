@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = {
-  title: "Disclaimer — S R S P & Co.",
-  description: "Professional disclaimer for S R S P & Co. — Chartered Accountants, Surat.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Disclaimer",
+  description:
+    "Professional disclaimer for S R S P & Co, Chartered Accountants, Surat.",
+  path: "/disclaimer/",
+});
 
 export default function DisclaimerPage() {
   return (

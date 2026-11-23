@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { ChevronRight, CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { pageMetadata, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { services, getServiceBySlug } from "@/lib/services";
 import { serviceIcons, serviceImages } from "@/lib/serviceVisuals";
@@ -20,10 +22,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
-  return {
-    title: `${service.title} — S R S P & Co`,
-    description: service.description,
-  };
+  return pageMetadata({
+    title: `${service.title} in Surat`,
+    description: service.description.length > 155 ? `${service.description.slice(0, 152).trimEnd()}...` : service.description,
+    path: `/services/${service.slug}/`,
+  });
 }
 
 export default async function ServiceDetailPage({
@@ -42,6 +45,16 @@ export default async function ServiceDetailPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services/" },
+            { name: service.title, path: `/services/${service.slug}/` },
+          ]),
+          serviceJsonLd(service),
+        ]}
+      />
       <Header />
       <main id="main-content">
         {/* Banner */}

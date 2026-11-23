@@ -39,8 +39,8 @@ export default function Hero() {
               className="text-white/65 text-lg leading-relaxed mb-10 max-w-lg mx-auto"
               style={{ fontFamily: "var(--font-dm)" }}
             >
-              Professional services in taxation, audit, accounting,
-              compliance, and financial advisory.
+              Chartered Accountants in Surat offering professional services in
+              taxation, audit, accounting, compliance, and financial advisory.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

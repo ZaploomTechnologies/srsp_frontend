@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { CONTACT } from "@/lib/contact";
+import { SITE_URL, SITE_NAME, OG_IMAGE, organizationJsonLd } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
 const plusJakarta = localFont({
@@ -26,51 +27,46 @@ const dmSans = localFont({
   ],
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://srspco.com";
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "S R S P & Co — Chartered Accountants in Surat",
-    template: "%s",
+    template: "%s | S R S P & Co",
   },
   description:
-    "Professional chartered accounting services in Surat. Accuracy, Integrity, and Commitment — S R S P & Co.",
-  alternates: { canonical: "./" },
+    "S R S P & Co is a firm of Chartered Accountants in Surat offering income tax, GST, audit, accounting, company law and financial advisory services.",
+  applicationName: SITE_NAME,
+  keywords: [
+    "chartered accountant in Surat",
+    "CA firm Surat",
+    "GST consultant Surat",
+    "income tax filing Surat",
+    "audit services Surat",
+    "company law consultancy",
+    "S R S P & Co",
+  ],
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "S R S P & Co",
+    siteName: SITE_NAME,
+    url: "/",
     title: "S R S P & Co — Chartered Accountants in Surat",
     description:
       "Taxation, audit, accounting, compliance and financial advisory services in Surat.",
-    images: [{ url: "/images/office-reception.webp", width: 1200, height: 800 }],
+    images: [OG_IMAGE],
   },
-  twitter: { card: "summary_large_image" },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "AccountingService",
-  name: "S R S P & Co",
-  description: "Chartered Accountants in Surat — taxation, audit, accounting, compliance and advisory.",
-  url: SITE_URL,
-  telephone: `+91${CONTACT.phone.replace(/\D/g, "")}`,
-  email: CONTACT.email.toLowerCase(),
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: CONTACT.address.line1,
-    addressLocality: "Surat",
-    addressRegion: "Gujarat",
-    postalCode: "395017",
-    addressCountry: "IN",
+  twitter: {
+    card: "summary_large_image",
+    title: "S R S P & Co — Chartered Accountants in Surat",
+    description:
+      "Taxation, audit, accounting, compliance and financial advisory services in Surat.",
+    images: [OG_IMAGE.url],
   },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "10:00",
-    closes: "19:00",
-  },
+  formatDetection: { telephone: true, email: true },
 };
 
 export default function RootLayout({
@@ -78,17 +74,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${plusJakarta.variable} ${dmSans.variable} antialiased`}
     >
       <body className="min-h-screen" suppressHydrationWarning>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={organizationJsonLd()} />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
