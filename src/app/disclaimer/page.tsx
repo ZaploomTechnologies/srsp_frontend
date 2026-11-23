@@ -96,7 +96,7 @@ export default function DisclaimerPage() {
                 <strong>S R S P &amp; Co.</strong><br />
                 B-101, Bhatar Trade Center, Near Bhatar Char Rasta<br />
                 Bhatar, Surat – 395017, Gujarat, India<br />
-                Email: <a href="mailto:SRSP@SRSPCO.COM" className="text-primary hover:underline">SRSP@SRSPCO.COM</a>
+                Email: <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a>
               </address>
             </section>
 

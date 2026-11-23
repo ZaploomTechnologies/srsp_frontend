@@ -43,6 +43,10 @@ export default function SmoothScrollProvider({
 
       e.preventDefault();
       lenis.scrollTo(el, { offset: -72, duration: 1.6 });
+      // Move keyboard focus to the target so skip links and anchors work for keyboard/screen-reader users.
+      if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
+      el.focus({ preventScroll: true });
+      history.replaceState(null, "", `#${id}`);
     };
 
     document.addEventListener("click", handleAnchorClick);

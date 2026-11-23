@@ -25,7 +25,7 @@ export default function ContactBanner() {
           style={{ fontFamily: "var(--font-dm)" }}
           aria-label="Breadcrumb"
         >
-          <Link href="/" className="hover:text-primary-light transition-colors duration-200">
+          <Link href="/" className="inline-block py-1.5 hover:text-primary-light transition-colors duration-200">
             Home
           </Link>
           <ChevronRight size={14} className="opacity-60" />

@@ -35,7 +35,7 @@ export default function NotFound() {
               style={{ fontFamily: "var(--font-dm)" }}
               aria-label="Breadcrumb"
             >
-              <Link href="/" className="hover:text-primary-light transition-colors duration-200">
+              <Link href="/" className="inline-block py-1.5 hover:text-primary-light transition-colors duration-200">
                 Home
               </Link>
               <ChevronRight size={14} className="opacity-60" />
@@ -120,7 +120,7 @@ export default function NotFound() {
             style={{ fontFamily: "var(--font-dm)" }}
           >
             We couldn&apos;t find the page you were looking for. Try one of our main pages, or start from our{" "}
-            <Link href="/" className="text-primary hover:underline font-medium">
+            <Link href="/" className="inline-block py-1.5 text-primary hover:underline font-medium">
               Home Page
             </Link>
           </p>

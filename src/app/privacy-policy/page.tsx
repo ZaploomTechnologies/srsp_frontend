@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
                 Near Bhatar Char Rasta, Bhatar, Surat – 395017, Gujarat, India.
               </p>
               <p className="mt-2">
-                Contact: <a href="mailto:SRSP@SRSPCO.COM" className="text-primary hover:underline">SRSP@SRSPCO.COM</a> | +91 63557 74778
+                Contact: <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a> | +91 63557 74778
               </p>
             </section>
 
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
               </ul>
               <p className="mt-2">
                 To exercise any of these rights, please contact us at{" "}
-                <a href="mailto:SRSP@SRSPCO.COM" className="text-primary hover:underline">SRSP@SRSPCO.COM</a>.
+                <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a>.
               </p>
             </section>
 
@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
                 <strong>S R S P &amp; Co.</strong><br />
                 B-101, Bhatar Trade Center, Near Bhatar Char Rasta<br />
                 Bhatar, Surat – 395017, Gujarat, India<br />
-                Email: <a href="mailto:SRSP@SRSPCO.COM" className="text-primary hover:underline">SRSP@SRSPCO.COM</a>
+                Email: <a href="mailto:SRSP@SRSPCO.COM" className="inline-block py-0.5 text-primary hover:underline">SRSP@SRSPCO.COM</a>
               </address>
             </section>
 

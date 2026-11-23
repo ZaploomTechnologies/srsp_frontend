@@ -64,7 +64,7 @@ export default function ServicesDetail() {
                   </p>
                   <Link
                     href={`/services/${svc.slug}`}
-                    className="mt-auto inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300"
+                    className="mt-auto inline-flex w-fit items-center gap-2 py-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300"
                     style={{ fontFamily: "var(--font-jakarta)" }}
                   >
                     Read More<span className="sr-only"> about {svc.title}</span> <ArrowRight size={16} />

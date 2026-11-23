@@ -76,13 +76,13 @@ export default async function ServiceDetailPage({
               style={{ fontFamily: "var(--font-dm)" }}
               aria-label="Breadcrumb"
             >
-              <Link href="/" className="transition-colors duration-200 hover:text-primary-light">
+              <Link href="/" className="inline-block py-1.5 transition-colors duration-200 hover:text-primary-light">
                 Home
               </Link>
               <ChevronRight size={14} className="opacity-60" />
               <Link
                 href="/services"
-                className="transition-colors duration-200 hover:text-primary-light"
+                className="inline-block py-1.5 transition-colors duration-200 hover:text-primary-light"
               >
                 Services
               </Link>
@@ -98,7 +98,7 @@ export default async function ServiceDetailPage({
             <div className="lg:col-span-2">
               <Link
                 href="/services"
-                className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 hover:gap-3"
+                className="mb-6 inline-flex min-h-6 items-center gap-2 py-1 text-sm font-semibold text-primary transition-all duration-300 hover:gap-3"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 <ArrowLeft size={16} /> Back to Services

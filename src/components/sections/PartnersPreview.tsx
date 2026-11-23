@@ -53,7 +53,7 @@ export default function PartnersPreview() {
           </div>
           <Link
             href="/about"
-            className="flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all duration-200 shrink-0"
+            className="flex items-center gap-2 py-1.5 text-primary font-semibold text-sm hover:gap-3 transition-all duration-200 shrink-0"
             style={{ fontFamily: "var(--font-dm)" }}
           >
             View Full Profile <ArrowUpRight size={16} />

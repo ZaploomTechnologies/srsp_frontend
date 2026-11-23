@@ -46,7 +46,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-white/90 text-sm hover:text-white transition-colors duration-200"
+                      className="inline-block py-1 text-white/90 text-sm hover:text-white transition-colors duration-200"
                       style={{ fontFamily: "var(--font-dm)" }}
                     >
                       {link.label}
@@ -107,14 +107,14 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <Link
                 href="/privacy-policy"
-                className="text-white/90 text-xs hover:text-white transition-colors duration-200"
+                className="inline-block py-1.5 text-white/90 text-xs hover:text-white transition-colors duration-200"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/disclaimer"
-                className="text-white/90 text-xs hover:text-white transition-colors duration-200"
+                className="inline-block py-1.5 text-white/90 text-xs hover:text-white transition-colors duration-200"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 Disclaimer

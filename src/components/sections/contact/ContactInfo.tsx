@@ -136,7 +136,7 @@ export default function ContactInfo() {
                   className="text-body text-sm"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
-                  <a href={`tel:+91${CONTACT.phone.replace(/\D/g, "")}`} className="hover:text-primary">+91 {CONTACT.phone}</a>
+                  <a href={`tel:+91${CONTACT.phone.replace(/\D/g, "")}`} className="inline-block py-1 hover:text-primary">+91 {CONTACT.phone}</a>
                 </p>
               </div>
 
@@ -154,7 +154,7 @@ export default function ContactInfo() {
                   className="text-body text-sm"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
-                  <a href={`mailto:${CONTACT.email}`} className="hover:text-primary">{CONTACT.email}</a>
+                  <a href={`mailto:${CONTACT.email}`} className="inline-block py-1 hover:text-primary">{CONTACT.email}</a>
                 </p>
               </div>
 
